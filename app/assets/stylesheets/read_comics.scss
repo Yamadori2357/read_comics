@@ -1,0 +1,37 @@
+body {
+  float: left;
+  width: 2000px;
+}
+header {
+  float: left;
+  width :200px;
+  margin-left: 300px;
+  border-right: solid;
+  border-width: 1px;
+  height: 1000px;
+  width: 300px;
+  li {
+    list-style: none;
+    font-size: 20px;
+    padding: 20px;
+  }
+}
+div {
+  &.main {
+    width: 600px;
+    padding: 20px 0px 0px 600px;
+    margin: 0px;
+    
+    
+    h1 {
+    font-size: 30px;
+    border-bottom: solid;
+    border-width: 1px;
+    
+    }
+  }
+}
+footer  {
+  padding-left: 1200px;
+  
+}
