@@ -16,6 +16,7 @@ header {
     padding: 20px;
   }
 }
+
 div {
   &.main {
     width: 600px;
@@ -30,8 +31,39 @@ div {
     
     }
   }
+  
+  &.signup_label {
+    font-size: 20px;
+    padding: 30px;
+  }
 }
 footer  {
   padding-left: 1200px;
   
 }
+
+
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: orange;
+    margin: 0 0 30px 0;
+  }
+}
+
+
+

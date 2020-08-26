@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get 'read_comics/home'
   root 'read_comics#home'
+  get  '/signup',  to: 'users#new'
+  resources :users
 end
