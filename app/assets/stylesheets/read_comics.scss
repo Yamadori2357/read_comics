@@ -1,7 +1,7 @@
-body {
-  float: left;
-  width: 2000px;
-}
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
 header {
   float: left;
   width :200px;
@@ -14,27 +14,42 @@ header {
     list-style: none;
     font-size: 20px;
     padding: 20px;
+    width: 250px;
   }
 }
 
 div {
   &.main {
-    width: 600px;
-    padding: 20px 0px 0px 600px;
+    width: 1100px;
     margin: 0px;
+    padding: 0 0 0 600px;
     
     
     h1 {
     font-size: 30px;
     border-bottom: solid;
     border-width: 1px;
+    padding: 0px 0px 10px 10px;
     
     }
+    
+    
   }
+  
+  
   
   &.signup_label {
     font-size: 20px;
     padding: 30px;
+  }
+  
+  &.login_label {
+    font-size: 20px;
+    padding: 30px;
+    
+    p {
+      font-size: 15px;
+    }
   }
 }
 footer  {
@@ -51,10 +66,17 @@ footer  {
   margin-top: 45px;
 }
 
+/* forms */
+
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
+  @include box_sizing(border-box);
+}
+
+input {
+  height: auto !important;
 }
 
 #error_explanation {
@@ -64,6 +86,9 @@ input, textarea, select, .uneditable-input {
     margin: 0 0 30px 0;
   }
 }
+
+/* forms */
+
 
 
 
