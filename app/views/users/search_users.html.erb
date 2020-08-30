@@ -1,12 +1,12 @@
-<h1>User search</h1>
-<%= form_with url: search_users_path, method: :get, local: true do |f| %>
+<h1>ユーザー検索</h1>
+<%= form_with  method: :get, local: true do |f| %>
   <%= f.text_field :name %>
-  <%= f.submit :search %>
+  <%= f.submit :検索 %>
 <% end %>
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>ユーザー</th>
     </tr>
   </thead>
   <tbody>
