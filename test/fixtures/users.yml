@@ -1,4 +1,10 @@
 michael:
   name: Michael Example
   email: michael@example.com
+  self_instoduction: mechel
+  password_digest: <%= User.digest('password') %>
+  
+archer:
+  name: Sterling Archer
+  email: duchess@example.gov
   password_digest: <%= User.digest('password') %>
