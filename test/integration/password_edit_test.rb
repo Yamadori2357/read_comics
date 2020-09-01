@@ -16,10 +16,10 @@ class PasswordEditTest < ActionDispatch::IntegrationTest
     assert_template 'users/password_edit'
   end
   
-  test "successful password_edit" do
-    log_in_as(@user)
+  test "successful password_edit with friendly forwarding" do
     get password_edit_user_path(@user)
-    assert_template 'users/password_edit'
+    log_in_as(@user)
+    assert_redirected_to password_edit_user_url(@user)
     patch password_edit_user_path(@user), params: { user: { password: "a" * 6,
                                                             password_confirmation: "a" * 6 } }
     assert_not flash.empty?

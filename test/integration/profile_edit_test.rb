@@ -16,10 +16,10 @@ class ProfileEditTest < ActionDispatch::IntegrationTest
     assert_template 'users/profile_edit'
   end
   
-  test "successful profile_edit" do
-    log_in_as(@user)
+  test "successful profile_edit with friendly forwarding" do
     get profile_edit_user_path(@user)
-    assert_template 'users/profile_edit'
+    log_in_as(@user)
+    assert_redirected_to profile_edit_user_url(@user)
     name  = "Foo Bar"
     email = "foo@bar.com"
     self_instoduction = "a"
