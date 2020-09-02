@@ -70,9 +70,10 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :self_instoduction, :password,
-                                   :password_confirmation)
+      params.require(:user).permit(:name, :email, :self_instoduction, :profile_image, :header_image,
+      :password,:password_confirmation)
     end
+    
     
     # ログイン済みユーザーかどうか確認
     def logged_in_user
@@ -88,4 +89,6 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
+    
+  
 end

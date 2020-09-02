@@ -8,6 +8,18 @@ class User < ApplicationRecord
             uniqueness: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  has_one_attached :profile_image
+  has_one_attached :header_image
+  # 表示用のリサイズ済み画像を返す
+  def display_profile_image
+    profile_image.variant(resize_to_limit: [50, 50])
+  end
+  
+  # 表示用のリサイズ済み画像を返す
+  def display_header_image
+    header_image.variant(resize_to_limit: [600, 200])
+  end
+  
   
   # 渡された文字列のハッシュ値を返す
   def User.digest(string)

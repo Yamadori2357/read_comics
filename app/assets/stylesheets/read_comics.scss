@@ -19,6 +19,7 @@ header {
 }
 
 div {
+  
   &.main {
     width: 1100px;
     margin: 0px;
@@ -30,6 +31,8 @@ div {
     border-bottom: solid;
     border-width: 1px;
     padding: 0px 0px 10px 10px;
+    
+    
     
     }
     
@@ -102,7 +105,4 @@ input {
   width: auto;
   margin-left: 0;
 }
-
-
-
 
