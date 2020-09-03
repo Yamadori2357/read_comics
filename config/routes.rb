@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   get  'users/:id/password_edit',   to: 'users#password_edit', as: 'password_edit_user'
   patch '/users/:id/password_edit',  to:'users#password_update', as: 'password_update'
   resources :users
-  
+  resources :account_activations, only: [:edit]
 end

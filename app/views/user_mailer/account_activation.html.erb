@@ -1,0 +1,12 @@
+<h1>会員登録の手続きはまだ完了していません</h1>
+
+<p><%= @user.name %>さん　ご利用いただき、ありがとうございます。</p>
+
+<p>
+以下のURLをクリックして、登録手続きをお願いいたします。
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
+                                                    
+<p>このメールに心当たりがない場合、このメールは破棄してください。</p>
