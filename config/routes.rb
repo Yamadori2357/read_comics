@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/edit'
   get 'sessions/new'
   root 'read_comics#home'
   get    '/signup',    to: 'users#new'
@@ -12,4 +14,5 @@ Rails.application.routes.draw do
   patch '/users/:id/password_edit',  to:'users#password_update', as: 'password_update'
   resources :users
   resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 end
