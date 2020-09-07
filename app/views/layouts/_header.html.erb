@@ -2,15 +2,15 @@
   <div class="container">
     <nav>
       <ul>
+        <li><%= link_to "ホーム",   root_path %></li>
         <% if logged_in? %>
         <li><%= link_to "プロフィール編集", profile_edit_user_path(current_user) %></li>
         <li><%= link_to "パスワード編集", password_edit_user_path(current_user) %></li>
+        <li><%= link_to "検索",   search_users_path %></li>
         <% else %>
         <li><%= link_to "新規作成",   signup_path %></li>
         <li><%= link_to "ログイン",   login_path %></li>
         <% end %>
-        <li><%= link_to "ホーム",   root_path %></li>
-        <li><%= link_to "検索",   search_users_path %></li>
         <li><%= link_to "通知",   '#' %></li>
         <li><%= link_to "記事", '#' %></li>
         <li><%= link_to "ランキング", '#' %></li>
