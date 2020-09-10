@@ -1,12 +1,15 @@
-<%= f.label :生年月日 %>
-      <%= raw sprintf(
-            f.date_select( :birth_date, use_month_numbers: true, start_year: 1930,
-              end_year: (Time.now.year), default: Date.new(1989, 1, 1), date_separator: '%s'), '年 ', '月 ') + '日' %>
-      
-      <%= f.label :性別 %><br />
-      <%= f.label :男性  %>
-      <%= f.radio_button :gender, :man %>
-      <%= f.label :女性  %>
-      <%= f.radio_button :gender, :woman %>
-      
-      enum gender: { man: 0, woman: 1}
+：投稿
+投稿に対してのコメント
+投稿などを検索
+いいね
+
+：漫画
+読んだ漫画
+読みたい漫画
+個人的ランキング
+ランキング（男女別など）
+漫画評価システム
+
+：その他
+通知
+掲示板
