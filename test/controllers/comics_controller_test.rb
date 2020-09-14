@@ -10,5 +10,10 @@ class ComicsControllerTest < ActionDispatch::IntegrationTest
     get comic_path(@comic)
     assert_response :success
   end
+  
+  test "should redirect index when not logged in" do
+    get search_comics_path
+    assert_redirected_to login_url
+  end
 
 end

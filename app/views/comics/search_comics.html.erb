@@ -1,0 +1,17 @@
+<% provide(:title, '検索（漫画タイトル）') %>
+
+<h1>検索（漫画）</h1>
+<%= form_with  method: :get, local: true do |f| %>
+  <%= f.text_field :title %>
+  <%= f.submit :検索 %>
+<% end %>
+
+<%= will_paginate %>
+
+<ul class="comics">
+  <% @comics.each do |comic| %>
+    <%= render comic %>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

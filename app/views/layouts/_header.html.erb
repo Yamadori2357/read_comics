@@ -6,7 +6,8 @@
         <% if logged_in? %>
         <li><%= link_to "プロフィール編集", profile_edit_user_path(current_user) %></li>
         <li><%= link_to "パスワード編集", password_edit_user_path(current_user) %></li>
-        <li><%= link_to "検索",   search_users_path %></li>
+        <li><%= link_to "ユーザー検索",   search_users_path %></li>
+        <li><%= link_to "漫画検索", search_comics_path %></li>
         <% else %>
         <li><%= link_to "新規作成",   signup_path %></li>
         <li><%= link_to "ログイン",   login_path %></li>

@@ -1,2 +1,7 @@
 naruto:
   title: Naruto
+
+<% 30.times do |n| %>
+comic_<%= n %>:
+  title:  <%= "Comic #{n}" %>
+<% end %>

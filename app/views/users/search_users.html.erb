@@ -1,9 +1,10 @@
+% provide(:title, '検索（ユーザー') %>
+
 <h1>ユーザー検索</h1>
 <%= form_with  method: :get, local: true do |f| %>
   <%= f.text_field :name %>
   <%= f.submit :検索 %>
 <% end %>
-<h1>ユーザー</h1>
 
 <%= will_paginate %>
 
