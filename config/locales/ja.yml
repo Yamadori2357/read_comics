@@ -36,9 +36,3 @@ ja:
         one:   "1年以上"
         other: "%{count}年以上"
 
-ja:
-  date:
-    order:
-      - :year
-      - :month
-      - :day
