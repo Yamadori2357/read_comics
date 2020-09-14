@@ -5,6 +5,20 @@ class ComicsController < ApplicationController
     @comic = Comic.find(params[:id])
   end
   
+  def new
+    @comic = Comic.new
+  end
+  
+  def create
+    @comic = Comic.new(comic_params)
+    if @comic.save
+      redirect_to @comic
+      # 保存の成功をここで扱う。
+    else
+      render 'new'
+    end
+  end
+  
   def search_comics
     if params[:title].present?
       @comics = Comic.where('title LIKE ?', "%#{params[:title]}%").paginate(page: params[:page])
@@ -16,7 +30,7 @@ class ComicsController < ApplicationController
   private
 
     def comic_params
-      params.require(:comic).permit(:title, :genre, :author_name)
+      params.require(:comic).permit(:title, :genre, :author_name, :content)
     end
     
 end
