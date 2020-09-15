@@ -1,9 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class = profile>
 <h1>
-        <% if @user.header_image.attached? %>
-        <%= image_tag @user.display_header_image %>
-        <% end %>
         <% if @user.profile_image.attached? %>
         <%= image_tag @user.display_profile_image %>
         <% end %>

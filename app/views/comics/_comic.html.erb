@@ -1,6 +1,9 @@
 <li>
-      <%= comic.cover_image %>
+      <% if comic.cover_image.attached? %>
+        <%= image_tag comic.display_litle_cover_image %>
+      <% end %>
       <%= comic.genre %>
       <%= link_to comic.title, comic %>
       <%= comic.author_name %>
+      <%= comic.content %>
 </li>

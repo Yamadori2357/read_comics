@@ -1,12 +1,16 @@
 <% provide(:title, @comic.title) %>
-<div class = comic_show>
 <h1>
-    <%= @comic.cover_image %>
     <%= @comic.title %>
+</h1>
+<h2>
+    <% if @comic.cover_image.attached? %>
+      <%= image_tag @comic.display_cover_image %>
+    <% end %>
     <%= @comic.author_name %>
     <%= @comic.genre %>
-</h1>
-</div>
-<h2>
-    <%= @comic.content %>
 </h2>
+<h3>
+    <%= @comic.content %>
+</h3>
+    
+

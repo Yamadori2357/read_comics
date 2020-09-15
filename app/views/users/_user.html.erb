@@ -1,5 +1,9 @@
 <li>
+  <% if user.profile_image.attached? %>
+    <%= image_tag user.display_profile_image %>
+  <% end %>
   <%= link_to user.name, user %>
+  <%= user.self_instoduction %>
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "削除", user, method: :delete,
                                   data: { confirm: "本当にこのアカウントを消しますか？" } %>

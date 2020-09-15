@@ -26,8 +26,9 @@ class User < ApplicationRecord
   has_one_attached :profile_image
   has_one_attached :header_image
   # 表示用のリサイズ済み画像を返す
+  
   def display_profile_image
-    profile_image.variant(resize_to_limit: [50, 50])
+    profile_image.variant(resize_to_fill: [60, 60])
   end
   
   # 表示用のリサイズ済み画像を返す

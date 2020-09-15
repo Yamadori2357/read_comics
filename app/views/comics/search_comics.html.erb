@@ -1,7 +1,7 @@
 <% provide(:title, '検索（漫画タイトル）') %>
 
 <h1>検索（漫画）</h1>
-<li><%= link_to "漫画作成",   new_comic_path %></li>
+<li><%= link_to "探したい漫画がない場合",   new_comic_path %></li>
 <%= form_with  method: :get, local: true do |f| %>
   <%= f.text_field :title %>
   <%= f.submit :検索 %>
