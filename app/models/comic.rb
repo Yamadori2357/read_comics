@@ -10,6 +10,6 @@ class Comic < ApplicationRecord
   end
   
   def display_litle_cover_image
-    cover_image.variant(resize_to_fill: [100, 130])
+    cover_image.variant(resize_to_fill: [100, 136])
   end
 end

@@ -5,6 +5,8 @@
 <h2>
     <% if @comic.cover_image.attached? %>
       <%= image_tag @comic.display_cover_image %>
+    <% else %>
+    <%= image_tag "comic_default.jpg" %>
     <% end %>
     <%= @comic.author_name %>
     <%= @comic.genre %>

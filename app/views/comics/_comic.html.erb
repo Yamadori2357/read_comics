@@ -1,6 +1,8 @@
 <li>
       <% if comic.cover_image.attached? %>
         <%= image_tag comic.display_litle_cover_image %>
+      <% else %>
+      <%= image_tag "comic_default2.jpg" %>
       <% end %>
       <%= comic.genre %>
       <%= link_to comic.title, comic %>
