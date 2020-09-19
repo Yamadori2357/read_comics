@@ -7,6 +7,9 @@
     <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :名前 %>
       <%= f.text_field :name %>
+      
+      <%= f.label :ユーザー名%>
+      <%= f.text_field :unique_name %>
 
       <%= f.label :メールアドレス %>
       <%= f.email_field :email %>

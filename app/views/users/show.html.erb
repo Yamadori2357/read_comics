@@ -6,10 +6,8 @@
         <% else %>
         <%= image_tag "default.jpg" %>
         <% end %>
-        <% if @user.profile_image.attached? %>
-        <%= image_tag @user.display_profile_image %>
-        <% end %>
         <%= @user.name %>
+        @<%= @user.unique_name %>
         <%= @user.self_instoduction %>
 </div>
 <section class="stats">

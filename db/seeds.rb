@@ -1,5 +1,6 @@
 # メインのサンプルユーザーを1人作成する
 User.create!(name:  "Example User",
+             unique_name: "example_user",
              email: "example@railstutorial.org",
              password:              "foobar",
              password_confirmation: "foobar",
@@ -14,6 +15,7 @@ User.create!(name:  "Example User",
   self_instoduction = "宜しくお願いします！"
   password = "password"
   User.create!(name:  name,
+               unique_name: "example_#{n+1}",
                email: email,
                self_instoduction: self_instoduction,
                password:              password,
