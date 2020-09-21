@@ -8,7 +8,9 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string  :profile_image
       t.string  :header_image
       t.date    :birth_date
+      t.integer :gender
       t.timestamps
     end
   end
 end
+

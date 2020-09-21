@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships,
                         source: :follower
   has_many :likes, dependent: :destroy
+  enum gender: { man: 0, woman: 1}
   
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_unique_name, :downcase_email
