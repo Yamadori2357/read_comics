@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_21_081153) do
+ActiveRecord::Schema.define(version: 2020_09_22_064309) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 2020_09_21_081153) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "comic_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comic_id"], name: "index_bookmarks_on_comic_id"
+    t.index ["user_id", "comic_id"], name: "index_bookmarks_on_user_id_and_comic_id", unique: true
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "comics", force: :cascade do |t|
@@ -81,6 +91,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_081153) do
     t.string "profile_image"
     t.string "header_image"
     t.date "birth_date"
+    t.integer "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
@@ -91,7 +102,6 @@ ActiveRecord::Schema.define(version: 2020_09_21_081153) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
-    t.integer "gender"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

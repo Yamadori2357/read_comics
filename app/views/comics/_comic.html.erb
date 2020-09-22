@@ -1,4 +1,5 @@
-<li>
+
+<li id="comic-<%= comic.id %>" data-micropost-id="<%= comic.id %>">
       <% if comic.cover_image.attached? %>
         <%= image_tag comic.display_litle_cover_image %>
       <% else %>
@@ -8,4 +9,5 @@
       <%= link_to comic.title, comic %>
       <%= comic.author_name %>
       <%= comic.content %>
+      <%= render "bookmarks/bookmark", comic: comic %>
 </li>

@@ -3,7 +3,7 @@
     <% if micropost.iine?(current_user) %>
       <%= form_for(micropost.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
         <%= button_tag(class: "btn btn-default btn-xs") do %>
-          <%= content_tag :span, "#{micropost.likes_count}", class: "glyphicon glyphicon-heart" %>
+          <%= content_tag :span, "#{micropost.likes_count}",:style => 'color:red', class: "glyphicon glyphicon-heart" %>
         <% end %>
       <% end %>
     <% else %>

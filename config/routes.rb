@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'bookmarks/create'
+  get 'bookmarks/destroy'
   root 'read_comics#home'
   get    '/signup',                   to: 'users#new'
   get    '/login',                    to: 'sessions#new'
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+  resources :bookmarks,           only: [:create, :destroy]
   resources :likes,               only: [:create, :destroy]
   resources :comics,              only: [:show, :new, :create]
   resources :account_activations, only: [:edit]

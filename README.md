@@ -49,3 +49,20 @@
 
 ：その他
 通知
+
+<span class="bookmark">
+  <% if comic.favorite?(current_user) %>
+    <%= form_for(comic.bookmarks.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
+      <%= button_tag(class: "btn btn-default btn-xs") do %>
+        <%= content_tag :span, "",:style => 'color:orange', class: "glyphicon glyphicon-star" %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= form_for(comic.bookmarks.build, remote: true) do |f| %>
+      <div><%= hidden_field_tag :comic_id, comic.id %></div>
+      <%= button_tag(class: "btn btn-default btn-xs") do %>
+        <%= content_tag :span, "", class: "glyphicon glyphicon glyphicon-star-empty" %>
+      <% end %>
+    <% end %>
+  <% end %>
+</span>
