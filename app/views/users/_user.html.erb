@@ -1,6 +1,8 @@
 <li>
   <% if user.profile_image.attached? %>
-    <%= image_tag user.display_profile_image %>
+    <%= image_tag user.display_lit_profile_image %>
+  <% else %>
+    <%= image_tag "default_lit.jpg" %>
   <% end %>
   <%= link_to user.name, user %>
   <%= user.self_instoduction %>

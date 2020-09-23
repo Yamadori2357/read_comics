@@ -17,6 +17,7 @@ class MicropostsController < ApplicationController
     @micropost.destroy
     redirect_to request.referrer || root_url
   end
+  
 
   private
 

@@ -11,7 +11,12 @@ class User < ApplicationRecord
   has_many :followers,   through: :passive_relationships,
                           source: :follower
   has_many :likes,     dependent: :destroy
+  has_many :liked,       through: :likes,
+                          source: :micropost
   has_many :bookmarks, dependent: :destroy
+  has_many :favorited,  through: :bookmarks,
+                          source: :comic
+  
   enum gender: { man: 0, woman: 1}
   
   attr_accessor :remember_token, :activation_token, :reset_token
@@ -36,6 +41,11 @@ class User < ApplicationRecord
   def display_profile_image
     profile_image.variant(resize_to_fill: [60, 60])
   end
+  
+  def display_lit_profile_image
+    profile_image.variant(resize_to_fill: [40, 40])
+  end
+  
   
   # 表示用のリサイズ済み画像を返す
   def display_header_image

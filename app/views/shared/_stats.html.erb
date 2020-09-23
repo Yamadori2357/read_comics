@@ -1,4 +1,5 @@
 <% @user ||= current_user %>
+<span><%= link_to "プロフィール編集", profile_edit_user_path(current_user) %></span>
 <div class="stats">
   <a href="<%= following_user_path(@user) %>">
     <strong id="following" class="stat">
@@ -11,5 +12,11 @@
       <%= @user.followers.count %>
     </strong>
     フォロワー
+  </a>
+  <a href="<%= liked_user_path(@user) %>">
+    いいね
+  </a>
+  <a href="<%= favorited_user_path(@user) %>">
+    お気に入り
   </a>
 </div>
