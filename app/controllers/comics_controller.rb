@@ -27,6 +27,13 @@ class ComicsController < ApplicationController
     end
   end
   
+  def favorited_ranks
+    @title = "お気に入りランキング"
+    @comics = Comic.find(Bookmark.group(:comic_id).order('count(comic_id) desc').limit(10).pluck(:comic_id))
+    render 'comics/comic_ranks'
+  end
+  
+  
   private
 
     def comic_params

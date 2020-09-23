@@ -88,15 +88,15 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
   
-  def liked
+  def liked_microposts
     @user = User.find(params[:id])
-    @microposts = @user.liked.paginate(page: params[:page])
+    @microposts = @user.liked_microposts.paginate(page: params[:page])
     render 'show_liked'
   end
   
-  def favorited
+  def favorited_comics
     @user = User.find(params[:id])
-    @comics = @user.favorited.paginate(page: params[:page])
+    @comics = @user.favorited_comics.paginate(page: params[:page])
     render 'show_comics'
   end
 

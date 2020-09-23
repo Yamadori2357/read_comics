@@ -12,12 +12,16 @@ Rails.application.routes.draw do
   get    'search_comics',             to: 'comics#search_comics',   as: 'search_comics'
   resources :users do
     member do
-      get :following, :followers, :liked, :favorited
+      get :following, :followers, :liked_microposts, :favorited_comics
     end
   end
   resources :bookmarks,           only: [:create, :destroy]
   resources :likes,               only: [:create, :destroy]
-  resources :comics,              only: [:show, :new, :create]
+  resources :comics,              only: [:show, :new, :create] do
+    collection do
+      get :favorited_ranks
+    end
+  end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]

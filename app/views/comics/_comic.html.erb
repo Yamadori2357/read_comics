@@ -5,6 +5,8 @@
       <% else %>
       <%= image_tag "comic_default2.jpg" %>
       <% end %>
+      お気に入り数
+      <%= comic.favorited_users.count %>
       <%= comic.genre %>
       <%= link_to comic.title, comic %>
       <%= comic.author_name %>

@@ -5,9 +5,8 @@ class Comic < ApplicationRecord
   validates :genre, presence: true
   has_one_attached :cover_image
   has_many :bookmarks, dependent: :destroy
-  has_many :favorite_users, through: :bookmarks, source: :user
+  has_many :favorited_users, through: :bookmarks, source: :user
   
-
   def display_cover_image
     cover_image.variant(resize_to_fill: [240, 326])
   end
@@ -25,6 +24,6 @@ class Comic < ApplicationRecord
   end
   
   def favorite?(user)
-    favorite_users.include?(user)
+    favorited_users.include?(user)
   end
 end

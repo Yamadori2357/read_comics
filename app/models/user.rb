@@ -11,10 +11,10 @@ class User < ApplicationRecord
   has_many :followers,   through: :passive_relationships,
                           source: :follower
   has_many :likes,     dependent: :destroy
-  has_many :liked,       through: :likes,
+  has_many :liked_microposts, through: :likes,
                           source: :micropost
   has_many :bookmarks, dependent: :destroy
-  has_many :favorited,  through: :bookmarks,
+  has_many :favorited_comics,  through: :bookmarks,
                           source: :comic
   
   enum gender: { man: 0, woman: 1}
