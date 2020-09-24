@@ -1,4 +1,22 @@
-<p>お気に入りランキング</p>
-<% @comics.each do |comic| %>
-    <%= render comic %>
-  <% end %>
+<% provide(:title, @title) %>
+<h1><%= yield(:title) %></h1>
+<% lastfavorited = 0 %>
+  <% j = 1 %>
+ <% @comics.each.with_index(1) do |comic, i| %>
+   <% if i == 1 %>
+     <% lastfavorited = comic.favorited_users.count %>
+   <% end %>
+   <% if comic.favorited_users.count != lastfavorited %>
+     <% j = i %>
+     第<%= j %>位
+     <p><%= @count_name %>数：<%= comic.favorited_users.count %></p>
+     <%= render comic %>
+     <% lastfavorited = comic.favorited_users.count %>
+   <% else %>
+     <% lastfavorited = comic.favorited_users.count %>
+     第<%= j %>位
+     <p><%= @count_name %>数：<%= comic.favorited_users.count %></p>
+     <%= render comic %>
+    <% end %>
+  <br>
+ <% end %>

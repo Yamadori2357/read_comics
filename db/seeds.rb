@@ -39,6 +39,8 @@ followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
+
+
 Comic.create!(title:       "NARUTO―ナルト―",
               author_name: "岸本斉史",
               content:     "ここは木ノ葉隠れの里。忍術学校の問題児、ナルトは今日もイタズラ三昧!!　そんなナルトのでっかい夢は歴代の勇者、火影の名を受けついで、先代を越える忍者になることだ。だがナルトには出生の秘密が…!?",
