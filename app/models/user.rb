@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :favorited_comics,  through: :bookmarks,
                           source: :comic
+  has_many :reviews,   dependent: :destroy
   
   enum gender: { man: 0, woman: 1}
   

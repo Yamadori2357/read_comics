@@ -10,9 +10,25 @@
     <% end %>
     <%= @comic.author_name %>
     <%= @comic.genre %>
+    　<div class="card mb-6">
+          <div class="card-content">
+            <div class="content average-score">
+              <div class="star-rating mb-2">
+                <div class="star-rating-front" style="width: <%= @comic.review_score_percentage %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div>
+              </div>
+              <div class="average-score-display ml-3 pt-2">
+                <%= @comic.avg_score %>点（<%= @comic.reviews.count %>件のレビュー）
+              </div>
+            </div>
+          </div>
+        </div>
 </h2>
 <h3>
     <%= @comic.content %>
 </h3>
-    
 
+<% @reviews.each do |review| %>
+ <%= render'reviews/review', review: review %>
+<% end %>
+            

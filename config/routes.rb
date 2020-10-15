@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     collection do
       get :favorited_ranks
     end
+    resources :reviews,  only: [:create]
   end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]

@@ -3,6 +3,8 @@ class ComicsController < ApplicationController
   
   def show
     @comic = Comic.find(params[:id])
+    @review = Review.new
+    @reviews = @comic.reviews
   end
   
   def new

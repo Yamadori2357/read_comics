@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_04_090206) do
+ActiveRecord::Schema.define(version: 2020_10_15_011249) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 2020_10_04_090206) do
     t.string "genre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "favorited_users_count", default: 0, null: false
   end
 
   create_table "likes", force: :cascade do |t|
@@ -82,6 +81,18 @@ ActiveRecord::Schema.define(version: 2020_10_04_090206) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "comic_id"
+    t.integer "score"
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comic_id"], name: "index_reviews_on_comic_id"
+    t.index ["user_id", "comic_id"], name: "index_reviews_on_user_id_and_comic_id", unique: true
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
