@@ -1,15 +1,15 @@
+<div class="micropost">
 <li id="micropost-<%= micropost.id %>">
   <span class="user">
   <% if micropost.user.profile_image.attached? %>
-    <%= image_tag micropost.user.display_lit_profile_image %>
+    <%= image_tag micropost.user.display_profile_image, class:"profile-image" %>
   <% else %>
-    <%= image_tag "default_lit.jpg" %>
+    <%= image_tag "default.jpg", class:"profile-image" %>
   <% end %>
-  <%= link_to micropost.user.name, micropost.user %>
+  <%= link_to micropost.user.name, micropost.user, class:"user_name"%>
   </span>
   <%= time_ago_in_words(micropost.created_at) %>前
   <span class="content">
-    
     <%= micropost.content %>
     <%= image_tag micropost.display_image if micropost.image.attached? %>
   </span>
@@ -21,3 +21,4 @@
   </span>
   <%= render "likes/like", micropost: micropost %>
 </li>
+</div>

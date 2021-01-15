@@ -1,6 +1,5 @@
 <% @user ||= current_user %>
-<span><%= link_to "プロフィール編集", profile_edit_user_path(current_user) %></span>
-<div class="stats">
+<div class="tag">
   <a href="<%= following_user_path(@user) %>">
     <strong id="following" class="stat">
       <%= @user.following.count %>

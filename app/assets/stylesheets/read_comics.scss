@@ -1,64 +1,246 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 body {
 }
+.center {
+  width: 94%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
 header {
-  float: left;
-  width :200px;
-  margin-left: 300px;
-  border-right: solid;
-  border-width: 1px;
-  height: 1000px;
-  width: 300px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  height: 60px;
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background-blend-mode: multiply;
   li {
-    list-style: none;
+  　color: white;
+    padding: 15px;
     font-size: 20px;
-    padding: 20px;
-    width: 250px;
+    list-style: none;
+  }
+  
+  .name {
+    font-size: 25px;
+    color: gray;
+    float: left;
+  }
+  .user {
+    float: right;
+    border-left: 1px solid white;
+  }
+  
+  .Title {
+    padding-left: 60px;
+    font-size:40px;
+    list-style: none;
+    float: left;
+    color: white
+  }
+}
+.left {
+  padding:0px;
+  width: 25%;
+  li {
+    margin: 35px 0px 0px 0px;
+    font-size: 30px;
+    font-weight: 600;
+    .head {
+      
+  border-radius: 20px;
+  color: black;
+  padding:10px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+    }
+    :visited { /*アクセスしたことのあるリンク*/
+    color: black;
+      }
+      :hover {/*マウスが上に乗っている状態*/
+          background: rgba(0,0,0,0.7);
+  color: white;
+             }
+  }
+}
+.main{
+  padding: 25px;
+  width: 50%;
+  border-right: 1px solid;
+  border-left: 1px solid;
+}
+
+.right {
+  width: 30%;
+  padding:15px;
+  .title {
+    font-size: 30px;
+    font-weight: 600;
+    color: gray;
+    border-bottom: 1px solid;
+  }
+  .comic-box {
+    border-bottom: 1px solid;
+    padding: 10px 0px;
+    .comic-rank {
+      display:inline-block;
+      vertical-align:top;
+    }
+    
+  }
+  h1 {
+    font-size: 18px;
+    color:#FF6666;;
+    font-weight: 500;
+    margin: 0px;
+    padding: 5px;
+  }
+  
+  h2 {
+    font-size: 18px;
+    margin: 0px;
+    padding: 5px;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 15px;
+    margin: 0px;
+    padding: 5px;
+  }
+  h4 {
+    padding: 5px;
+  }
+  
+  li {
+    font-size: 25px;
+    color:black;
   }
 }
 
-div {
-  
-  &.main {
-    width: 1300px;
-    margin: 0px;
-    padding: 0 0 0 700px;
-    
-    
-    h1 {
-    font-size: 30px;
-    border-bottom: solid;
-    border-width: 1px;
-    padding: 0px 0px 10px 10px;
-    
-    
-    
-    }
-    
+.users {
+  li {
     
   }
-  
-  
-  
-  &.signup_label {
-    font-size: 20px;
-    padding: 30px;
-  }
-  
-  &.login_label {
-    font-size: 20px;
-    padding: 30px;
-    
-    p {
-      font-size: 15px;
-    }
+  .user-content {
+    display:inline-block;
+    vertical-align:top; 
   }
 }
-footer  {
-  padding-left: 1200px;
+.user-list {
+  padding: 0px 0px 0px 0px;
+  border-bottom: 1px solid #e8e8e8;
+  .user-box {
+    display:inline-block;
+    vertical-align:middle;
+  }
+  h1 {
+    margin: 0px;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0px;
+    margin: 0px;
+  }
+  h3 {
+    font-size: 18px;
+    color: gray;
+    padding-top: 5px;
+    margin: 0px;
+  }
+  h4 {
+    padding: 0px 0px 0px 60px;
+    margin: 0px;
+    font-weight: 400;
+    font-size: 18px;
+  }
   
+}
+.user-info {
+  margin-left: 30px;
+  .user-box {
+    display:inline-block;
+    vertical-align:middle;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    padding: 0px;
+    margin: 0px;
+  }
+  h2 {
+    font-size: 32px;
+    color: gray;
+    padding-top: 5px;
+    margin: 0px;
+  }
+  
+}
+.micropost {
+   width: 150%;
+  .content {
+    font-size: 22px;
+  }
+}
+li {
+  list-style: none
+}
+
+.user_name {
+  font-size: 18px;
+  color: gray;
+}
+
+.search_box {
+  width: 100px;
+}
+.submit_box {
+  padding: 0 0 0 30px;
+  display       : inline-block;
+  width: 60px;
+  border-radius : 10%;          /* 角丸       */
+  font-size     : 9pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : orange;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+}
+.submit_box:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.btn-p {
+  resize: none;
+  width:300px;
+  height:200px;
+}
+
+.transmission {
+  width: 60px;
+  display: inline-block;
+  text-decoration: none;
+  background: gray;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px
+}
+
+.transmission:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+.image {
+  float: left;
 }
 
 
@@ -89,6 +271,34 @@ input {
     color: orange;
     margin: 0 0 30px 0;
   }
+}
+
+.search{
+  width: 55%;
+  box-sizing: border-box;
+  margin-left: 50px;
+}
+.search input[type="text"]{
+  border: 1px solid #999;
+  padding: 3px 5px;
+  border-radius: 20px;
+  height: 2.0em;
+  width: 150%;
+  overflow: hidden;
+}
+.search input[type="text"]:focus {
+  outline: 0;
+}
+.search input[type="submit"]{
+  cursor: pointer;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #3879D9;
+  outline : none;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* forms */
@@ -136,16 +346,60 @@ input {
   }
 
 
-aside {
   textarea {
+    border-radius: 10px;
     height: 100px;
-    margin-bottom: 5px;
+    width: 90%;
+    resize: none;
+    outline: 0;
   }
-}
-
-span.image {
-  margin-top: 10px;
+  .text_all {
+    margin-left: 30px;
+  }
+.image {
   input {
     border: 0;
   }
+}
+.comics {
+  padding: 0px 10px;
+}
+.comic{
+  padding: 20px 10px;
+  float: left;
+  border-bottom: 1px solid;
+}
+
+.comic-image {
+  object-fit: cover;
+  width: 170px;
+  height: 230px;
+}
+
+.profile-image {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width:  60px;       /* ※縦横を同値に */
+  height: 60px;       /* ※縦横を同値に */
+  padding: 5px;
+  float: left;
+}
+.profile-big-image {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width:  120px;       /* ※縦横を同値に */
+  height: 120px;       /* ※縦横を同値に */
+  padding: 5px;
+  float: left;
+}
+.comic_lit_image {
+  width:  120px;       /* ※縦横を同値に */
+  height: 162px;       /* ※縦横を同値に */
+}
+
+
+
+.tag {
+  a {
+    padding-left: 10px;
+  }
+  
 }

@@ -1,8 +1,0 @@
-<span><% if current_user.profile_image.attached? %>
-      <%= image_tag current_user.display_profile_image %>
-    <% else %>
-      <%= image_tag "default.jpg" %>
-    <% end %>
-</span>
-
-        <li><%= link_to "プロフィール",  current_user %></li>

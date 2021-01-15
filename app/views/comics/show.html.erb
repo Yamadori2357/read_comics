@@ -10,6 +10,9 @@
     <% end %>
     <%= @comic.author_name %>
     <%= @comic.genre %>
+    <h2>
+    <h3><%= @comic.content %></h3>
+    <%= render'reviews/form', review: @review, comic: @comic %>
     　<div class="card mb-6">
           <div class="card-content">
             <div class="content average-score">
@@ -24,11 +27,8 @@
           </div>
         </div>
 </h2>
-<h3>
-    <%= @comic.content %>
-</h3>
 
-<% @reviews.each do |review| %>
- <%= render'reviews/review', review: review %>
-<% end %>
+
+ <%= render 'reviews/review', review: @review %>
+ 
             

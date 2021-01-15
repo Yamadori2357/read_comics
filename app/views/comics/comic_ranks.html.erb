@@ -2,7 +2,7 @@
 <h1><%= yield(:title) %></h1>
 <% lastfavorited = 0 %>
   <% j = 1 %>
- <% @comics.each.with_index(1) do |comic, i| %>
+ <% @ranking_comic.each.with_index(1) do |comic, i| %>
    <% if i == 1 %>
      <% lastfavorited = comic.favorited_users.count %>
    <% end %>
@@ -18,5 +18,4 @@
      <p><%= @count_name %>数：<%= comic.favorited_users.count %></p>
      <%= render comic %>
     <% end %>
-  <br>
  <% end %>

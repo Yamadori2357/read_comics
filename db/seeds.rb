@@ -1,43 +1,52 @@
-# メインのサンプルユーザーを1人作成する
-User.create!(name:  "Example User",
-             unique_name: "example_user",
+User.create!(name:  "室井佑月",
+             unique_name: "muroi",
              email: "example@railstutorial.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
+             password:              "password",
+             password_confirmation: "password",
              admin: true,
              activated: true,
              activated_at: Time.zone.now)
+             
+User.create!(name:  "佐藤誠",
+             unique_name: "sato1980",
+             email: "example@railstutorial2.org",
+             password:              "password",
+             password_confirmation: "password",
+             activated: true,
+             activated_at: Time.zone.now)
 
-# 追加のユーザーをまとめて生成する
-99.times do |n|
-  name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
-  self_instoduction = "宜しくお願いします！"
-  password = "password"
-  User.create!(name:  name,
-               unique_name: "example_#{n+1}",
-               email: email,
-               self_instoduction: self_instoduction,
-               password:              password,
-               password_confirmation: password,
-               activated: true,
-               activated_at: Time.zone.now)
-end
+User.create!(name:  "あしべゆうほ",
+             unique_name: "ashibe_yuho",
+             email: "example@railstutorial3.org",
+             password:              "password",
+             password_confirmation: "password",
+             activated: true,
+             activated_at: Time.zone.now)
+          
+User.create!(name:  "フルカワミキ",
+             unique_name: "hurukawamiki",
+             email: "example@railstutorial4.org",
+             password:              "password",
+             password_confirmation: "password",
+             activated: true,
+             activated_at: Time.zone.now)
+          
+User.create!(name:  "けんずろう",
+             unique_name: "kenzuro2021",
+             email: "example@railstutorial5.org",
+             password:              "password",
+             password_confirmation: "password",
+             activated: true,
+             activated_at: Time.zone.now)
+             
+User.create!(name:  "下山大地",
+             unique_name: "shimoyama",
+             email: "example@railstutorial6.org",
+             password:              "password",
+             password_confirmation: "password",
+             activated: true,
+             activated_at: Time.zone.now)
 
-# ユーザーの一部を対象にマイクロポストを生成する
-users = User.order(:created_at).take(6)
-50.times do
-  content = Faker::Lorem.sentence(word_count: 5)
-  users.each { |user| user.microposts.create!(content: content) }
-end
-
-# 以下のリレーションシップを作成する
-users = User.all
-user  = users.first
-following = users[2..50]
-followers = users[3..40]
-following.each { |followed| user.follow(followed) }
-followers.each { |follower| follower.follow(user) }
 
 
 

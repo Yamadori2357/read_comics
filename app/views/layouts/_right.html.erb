@@ -1,0 +1,51 @@
+<div class="right">
+  <div class="title">ランキング</div>
+  <% lastfavorited = 0 %>
+  <% j = 1 %>
+ <% @ranking_comic.each.with_index(1) do |comic, i| %>
+   <div class="comic-box">
+   <% if i == 1 %>
+     <% lastfavorited = comic.favorited_users.count %>
+   <% end %>
+   <% if comic.favorited_users.count != lastfavorited %>
+     <% j = i %>
+     <div id="comic-<%= comic.id %>" data-micropost-id="<%= comic.id %>">
+      <div class="comic-rank">
+      <% if comic.cover_image.attached? %>
+        <%= image_tag comic.display_litle_cover_image %>
+      <% else %>
+        <%= image_tag "comic_default.jpg", class:"comic_lit_image" %>
+      <% end %>
+      </div>
+      <div class="comic-rank">
+        <h1>第<%= j %>位</h1>
+        <h2><%= link_to comic.title, comic %></h2>
+        <h3>作家：<%= comic.author_name %></h3>
+        <%= render "bookmarks/bookmark", comic: comic %>
+      </div>
+  </div>
+  
+     <% lastfavorited = comic.favorited_users.count %>
+   <% else %>
+     <% lastfavorited = comic.favorited_users.count %>
+     
+     <div id="comic-<%= comic.id %>" data-micropost-id="<%= comic.id %>">
+      <div class="comic-rank">
+      <% if comic.cover_image.attached? %>
+        <%= image_tag comic.display_litle_cover_image %>
+      <% else %>
+        <%= image_tag "comic_default.jpg", class:"comic_lit_image" %>
+      <% end %>
+      </div>
+      <div class="comic-rank">
+        <h1>第<%= j %>位</h1>
+        <h2><%= link_to comic.title, comic %></h2>
+        <h3><%= comic.author_name %></h3>
+        <h4><%= render "bookmarks/bookmark", comic: comic %></h4>
+      </div>
+  </div>
+    <% end %>
+    </div>
+ <% end %>
+ 
+</div>

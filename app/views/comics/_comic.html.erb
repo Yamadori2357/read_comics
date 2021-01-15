@@ -1,12 +1,17 @@
-<li id="comic-<%= comic.id %>" data-micropost-id="<%= comic.id %>">
-      <% if comic.cover_image.attached? %>
-        <%= image_tag comic.display_litle_cover_image %>
+<div class="comic">
+  <div id="comic-<%= comic.id %>" data-micropost-id="<%= comic.id %>">
+      <li><% if comic.cover_image.attached? %>
+        <%= image_tag comic.display_cover_image, class: "comic-image" %>
       <% else %>
-      <%= image_tag "comic_default2.jpg" %>
+        <%= image_tag "comic_default.jpg", class: "comic-image" %>
       <% end %>
-      ジャンル：<%= comic.genre %>
-      <%= link_to comic.title, comic %>
-      作家：<%= comic.author_name %>
-      作品内容：<%= comic.content %>
+      </li>
+      <div class="comic-title">
+        <li><%= link_to comic.title, comic %></li>
+      </div>
+      <div class="comic-author_name">
+        <li><%= comic.author_name %></li>
+      </div>
       <%= render "bookmarks/bookmark", comic: comic %>
-</li>
+  </div>
+</div>

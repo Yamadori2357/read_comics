@@ -1,0 +1,9 @@
+<div- class="user-info">
+  <% if @user.profile_image.attached? %>
+    <%= image_tag @user.profile_image, class:"profile-image" %>
+  <% else %>
+    <%= image_tag "default.jpg", class:"profile-image" %>
+  <% end %>
+  <h1><%= @user.name %></h1>
+  <h2>@<%= @user.unique_name %></h2>
+</div>

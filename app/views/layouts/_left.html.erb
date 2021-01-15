@@ -1,0 +1,20 @@
+<div class="left">
+    <nav>
+      <ul>
+        <li><%= link_to "ホーム",   root_path, class:"head" %></li>
+        <% if logged_in? %>
+        <li><%= link_to "ユーザー検索",   search_users_path, class:"head" %></li>
+        <li><%= link_to "漫画検索", search_comics_path, class:"head" %></li>
+        <% else %>
+        <li><%= link_to "新規作成",   signup_path, class:"head" %></li>
+        <li><%= link_to "ログイン",   login_path, class:"head" %></li>
+        <% end %>
+        <% if logged_in? %>
+              <li><%= link_to "プロフィール",  current_user, class:"head" %></li>
+              <li><%= link_to "プロフィール編集", profile_edit_user_path(current_user), class:"head" %></li>
+              <li><%= link_to "ログアウト", logout_path, method: :delete, class:"head" %></li>
+        <% else %>
+        <% end %>
+      </ul>
+    </nav>
+  </div>

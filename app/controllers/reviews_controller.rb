@@ -6,7 +6,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to comic_path(@review.comic)
     else
-      render 'comic/show'
+      @comic = Comic.find(params[:comic_id])
+      render 'comics/show'
     end
   end
     

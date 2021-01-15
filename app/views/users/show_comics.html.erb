@@ -1,5 +1,25 @@
-
-<ul class="favorited">
+<% provide(:title, @user.name) %>
+<div class="user-info">
+  <div class="profile">
+    <div class="user-box">
+    <% if @user.profile_image.attached? %>
+      <%= image_tag @user.profile_image, class:"profile-big-image" %>
+    <% else %>
+      <%= image_tag "default.jpg", class:"profile-big-image" %>
+    <% end %>
+    </div>
+    <div class="user-box">
+      <h1><%= @user.name %></h1>
+      <h2>@<%= @user.unique_name %></h2>
+    </div>
+    <h3><%= @user.self_instoduction %></h3>
+  </div>
+<section class="stats">
+  <%= render 'shared/stats' %>
+</section>
+</div>
+<h3>お気に入り数<%= @user.favorited_comics.count %></h3>
+<ul class="comics">
   <% @comics.each do |comic| %>
     <%= render comic %>
   <% end %>

@@ -20,21 +20,6 @@
       
       <%= f.label :プロフィール画像 %>
       <%= f.file_field :profile_image, accept: "image/jpeg,image/png", class: 'form-control' %>
-      
-      <%= f.label :ヘッダー画像 %>
-      <%= f.file_field :header_image, accept: "image/jpeg,image/png", class: 'form-control' %>
-      
-      <%= f.label :性別 %>
-      <%= f.label :男性  %>
-      <%= f.radio_button :gender, :man %>
-      <%= f.label :女性  %>
-      <%= f.radio_button :gender, :woman %>
-
-      <%= f.label :生年月日 %>
-      <%= raw sprintf(
-            f.date_select( :birth_date, use_month_numbers: true, start_year: 1930,
-              end_year: (Time.now.year), default: Date.new(1989, 1, 1), date_separator: '%s', order: [:year, :month, :day]), '年 ', '月 ') + '日' %>
-
       <%= f.submit "保存", class: "btn btn-primary" %>
     <% end %>
 

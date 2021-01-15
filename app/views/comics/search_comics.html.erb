@@ -1,11 +1,10 @@
-<% provide(:title, '検索（漫画タイトル）') %>
-
-<h1>検索（漫画）</h1>
-<li><%= link_to "探したい漫画がない場合",   new_comic_path %></li>
+<% provide(:title, '漫画検索') %>
+<div class="search">
 <%= form_with  method: :get, local: true do |f| %>
-  <%= f.text_field :title %>
-  <%= f.submit :検索 %>
+  <%= f.text_field :title, placeholder: "漫画検索"%>
 <% end %>
+<li><%= link_to "探したい漫画がない場合",   new_comic_path %></li>
+</div>
 
 <%= will_paginate %>
 
