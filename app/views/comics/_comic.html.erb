@@ -1,7 +1,7 @@
 <div class="comic">
   <div id="comic-<%= comic.id %>" data-micropost-id="<%= comic.id %>">
       <li><% if comic.cover_image.attached? %>
-        <%= image_tag comic.display_cover_image, class: "comic-image" %>
+        <%= image_tag comic.cover_image, class: "comic-image" %>
       <% else %>
         <%= image_tag "comic_default.jpg", class: "comic-image" %>
       <% end %>

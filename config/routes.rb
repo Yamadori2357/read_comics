@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
   resources :bookmarks,           only: [:create, :destroy]
   resources :likes,               only: [:create, :destroy]
-  resources :comics,              only: [:show, :new, :create] do
+  resources :comics,              only: [:show, :new, :create, :edit, :update] do
     collection do
       get :favorited_ranks
     end

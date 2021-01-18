@@ -1,3 +1,4 @@
+<div class="review_form">
 <p class="is-size-4 mb-3">レビューを書く</p>
 <% if review.errors.any? %>
   <div class="notification is-danger">
@@ -23,10 +24,10 @@
     </div>
     <%= f.hidden_field :comic_id, value: comic.id %>
     <%= f.hidden_field :score, id: "rating-value" %>
-    <%= f.text_area :content, class: "textarea" %>
-    <%= f.submit "保存", class: "button mt-3" %>
+    <%= f.text_area :content %>
   <% end %>
 </div>
 
 
 <%= javascript_include_tag 'reviews.js' %>
+</div>

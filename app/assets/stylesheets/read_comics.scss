@@ -364,16 +364,61 @@ input {
 .comics {
   padding: 0px 10px;
 }
-.comic{
+.comic {
   padding: 20px 10px;
   float: left;
   border-bottom: 1px solid;
 }
+.comic_show{
+  float: left;
+  border-bottom: 1px solid;
+  h1 {
+    font-size: 30px;
+    font-weight: 600;
+    color: gray;
+    border-bottom: 1px solid;
+    margin: 0px;
+    
+  }
+  h2 {
+    font-size: 18px;
+    color: gray;
+    margin: 0px;
+    padding: 5px;
+  }
+  h3 {
+    font-size: 18px;
+    color: gray;
+    margin: 0px;
+  }
+  h4 {
+    font-size: 24px;
+    margin: 0px;
+    padding:5px;
+  }
+  h5 {
+    font-size: 24px;
+    margin: 0px;
+  }
 
+}
+.comic-big-image {
+  object-fit: cover;
+  float: left;
+  width: 240px;
+  height: 324px;
+  padding-right: 10px;
+}
 .comic-image {
   object-fit: cover;
+  float: left;
   width: 170px;
   height: 230px;
+}
+.comic-lit-image {
+  object-fit: cover;
+  width:  120px;       /* ※縦横を同値に */
+  height: 162px;       /* ※縦横を同値に */
 }
 
 .profile-image {
@@ -390,16 +435,20 @@ input {
   padding: 5px;
   float: left;
 }
-.comic_lit_image {
-  width:  120px;       /* ※縦横を同値に */
-  height: 162px;       /* ※縦横を同値に */
+.comic_param {
+  height: 324px;
 }
-
-
-
+.com_box {
+}
 .tag {
   a {
     padding-left: 10px;
   }
-  
+}
+.review_form {
+  p {
+    font-size: 24px;
+    margin: 0px;
+    padding:5px;
+  }
 }

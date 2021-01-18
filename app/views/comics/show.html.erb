@@ -1,18 +1,21 @@
+<div class="comic_show">
 <% provide(:title, @comic.title) %>
-<h1>
-    <%= @comic.title %>
-</h1>
-<h2>
+  <div class="comic_param">
     <% if @comic.cover_image.attached? %>
-      <%= image_tag @comic.display_cover_image %>
+      <%= image_tag @comic.cover_image, class: "comic-big-image"%>
     <% else %>
-    <%= image_tag "comic_default.jpg" %>
+    <%= image_tag "comic_default.jpg", class: "comic-big-image"%>
     <% end %>
-    <%= @comic.author_name %>
-    <%= @comic.genre %>
-    <h2>
-    <h3><%= @comic.content %></h3>
-    <%= render'reviews/form', review: @review, comic: @comic %>
+    <div class="com_box">
+      <h1><%= @comic.title %></h1>
+      <h2>作家: <%= @comic.author_name %></h2>
+      <h3>ジャンル: <%= @comic.genre %></h3>
+      <h4>内容</h4>
+      <h5> <%= @comic.content %></h5>
+    </div>
+  </div>
+    <%= render'reviews/form', review: @review, comic: @comic%>
+    <li><%= link_to "漫画編集",   edit_comic_path %></li>
     　<div class="card mb-6">
           <div class="card-content">
             <div class="content average-score">
@@ -26,9 +29,6 @@
             </div>
           </div>
         </div>
-</h2>
-
-
  <%= render 'reviews/review', review: @review %>
- 
+ </div>
             

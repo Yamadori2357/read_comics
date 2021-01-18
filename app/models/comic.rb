@@ -8,14 +8,6 @@ class Comic < ApplicationRecord
   has_many :favorited_users, through: :bookmarks, source: :user
   has_many :reviews,   dependent: :destroy
   
-  def display_cover_image
-    cover_image.variant(resize_to_fill: [240, 326])
-  end
-  
-  def display_litle_cover_image
-    cover_image.variant(resize_to_fill: [100, 136])
-  end
-  
   def favorite(user)
     bookmarks.create(user_id: user.id)
   end

@@ -12,9 +12,9 @@
      <div id="comic-<%= comic.id %>" data-micropost-id="<%= comic.id %>">
       <div class="comic-rank">
       <% if comic.cover_image.attached? %>
-        <%= image_tag comic.display_litle_cover_image %>
+        <%= image_tag comic.cover_image, class:"comic-lit-image" %>
       <% else %>
-        <%= image_tag "comic_default.jpg", class:"comic_lit_image" %>
+        <%= image_tag "comic_default.jpg", class:"comic-lit-image" %>
       <% end %>
       </div>
       <div class="comic-rank">
@@ -32,9 +32,9 @@
      <div id="comic-<%= comic.id %>" data-micropost-id="<%= comic.id %>">
       <div class="comic-rank">
       <% if comic.cover_image.attached? %>
-        <%= image_tag comic.display_litle_cover_image %>
+        <%= image_tag comic.cover_image, class:"comic-lit-image" %>
       <% else %>
-        <%= image_tag "comic_default.jpg", class:"comic_lit_image" %>
+        <%= image_tag "comic_default.jpg", class:"comic-lit-image" %>
       <% end %>
       </div>
       <div class="comic-rank">

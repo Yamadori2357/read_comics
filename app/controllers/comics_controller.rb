@@ -21,6 +21,21 @@ class ComicsController < ApplicationController
     end
   end
   
+  def edit 
+    @comic = Comic.find(params[:id])
+  end
+  
+  def update
+    @comic = Comic.find(params[:id])
+    if @comic.update(comic_params)
+      flash[:success] = "編集に成功しました"
+      redirect_to @comic
+    else
+      render'edit'
+    end
+  end
+  
+  
   def search_comics
     if params[:title].present?
       @comics = Comic.where('title LIKE ?', "%#{params[:title]}%").paginate(page: params[:page])
@@ -41,7 +56,5 @@ class ComicsController < ApplicationController
     def comic_params
       params.require(:comic).permit(:title, :genre, :author_name, :content, :cover_image)
     end
-  
-    
     
 end
