@@ -25,6 +25,7 @@
     <%= f.hidden_field :comic_id, value: comic.id %>
     <%= f.hidden_field :score, id: "rating-value" %>
     <%= f.text_area :content %>
+    <%= f.submit "送信", class: "transmission"%>
   <% end %>
 </div>
 
