@@ -54,10 +54,10 @@ header {
   -webkit-transition: all .3s;
   transition: all .3s;
     }
-    :visited { /*アクセスしたことのあるリンク*/
+    :visited { 
     color: black;
       }
-      :hover {/*マウスが上に乗っている状態*/
+      :hover {
           background: rgba(0,0,0,0.7);
   color: white;
              }
@@ -198,22 +198,22 @@ li {
   padding: 0 0 0 30px;
   display       : inline-block;
   width: 60px;
-  border-radius : 10%;          /* 角丸       */
-  font-size     : 9pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 12px 12px;   /* 余白       */
-  background    : orange;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
-  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
-  border        : 2px solid #000066;    /* 枠の指定 */
+  border-radius : 10%;        
+  font-size     : 9pt;      
+  text-align    : center;    
+  cursor        : pointer; 
+  padding       : 12px 12px; 
+  background    : orange;   
+  color         : #ffffff;   
+  line-height   : 1em;    
+  transition    : .3s;   
+  box-shadow    : 6px 6px 3px #666666; 
+  border        : 2px solid #000066; 
 }
 .submit_box:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : #000066;     /* 背景色     */
-  background    : #ffffff;     /* 文字色     */
+  box-shadow    : none;   
+  color         : #000066;  
+  background    : #ffffff;  
 }
 
 .btn-p {
@@ -226,17 +226,16 @@ li {
   width: 60px;
   display: inline-block;
   text-decoration: none;
-  background: gray;/*ボタン色*/
+  background: gray;
   color: #FFF;
   border-bottom: solid 4px #627295;
   border-radius: 3px
 }
 
 .transmission:active {
-  /*ボタンを押したとき*/
   -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
+  transform: translateY(4px);
+  border-bottom: none;
 }
 
 .image {
@@ -417,21 +416,21 @@ input {
 }
 .comic-lit-image {
   object-fit: cover;
-  width:  120px;       /* ※縦横を同値に */
-  height: 162px;       /* ※縦横を同値に */
+  width:  120px; 
+  height: 162px;   
 }
 
 .profile-image {
-  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-  width:  60px;       /* ※縦横を同値に */
-  height: 60px;       /* ※縦横を同値に */
+  border-radius: 50%; 
+  width:  60px;
+  height: 60px;    
   padding: 5px;
   float: left;
 }
 .profile-big-image {
-  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-  width:  120px;       /* ※縦横を同値に */
-  height: 120px;       /* ※縦横を同値に */
+  border-radius: 50%; 
+  width:  120px; 
+  height: 120px; 
   padding: 5px;
   float: left;
 }
